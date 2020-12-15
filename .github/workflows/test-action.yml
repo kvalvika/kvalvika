@@ -1,15 +1,20 @@
  name: Python Lint Checker
  
  on:
-   pull_request:
-     types: [opened, reopened, synchronize]
+   push:
+     branches: [release*, main]
  
  jobs:
-   lint-check-job:
-     name: Check Python List
+   action-check:
+     name: Check
      runs-on: ubuntu-18.04
      strategy:
        max-parallel: 10
      steps:
        - run: |
            echo ${{ github.event.pull_request.number }}
+           if [ ${{ github.ref }} == "main" ]; then
+             echo "main branch"
+           else
+             echo "release branch"
+           fi
