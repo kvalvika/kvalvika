@@ -15,7 +15,7 @@
            echo ${{ github.event.pull_request.number }}
            if [ ${{ github.ref }} == "refs/heads/main" ]; then
              echo "main branch"
-             echo "NEXTWEEK" >> $SERVER_STAGE
+             echo "SERVER_STAGE=NEXTWEEK" >> $GITHUB_ENV
            else 
              echo "release branch"
            fi
