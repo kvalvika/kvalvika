@@ -18,6 +18,7 @@
              echo "SERVER_STAGE=NEXTWEEK" >> $GITHUB_ENV
            else 
              echo "release branch"
+             echo "SERVER_STAGE=WWW" >> $GITHUB_ENV
            fi
        - name: test
          run: |
