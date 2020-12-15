@@ -1,0 +1,15 @@
+ name: Python Lint Checker
+ 
+ on:
+   pull_request:
+     types: [opened, reopened, synchronize]
+ 
+ jobs:
+   lint-check-job:
+     name: Check Python List
+     runs-on: ubuntu-18.04
+     strategy:
+       max-parallel: 10
+     steps:
+       - run: |
+           echo ${{ github.event.pull_request.number }}
