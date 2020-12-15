@@ -13,8 +13,8 @@
      steps:
        - run: |
            echo ${{ github.event.pull_request.number }}
-           if [ ${{ github.ref }} == "main" ]; then
+           if [ ${{ github.ref }} == "refs/heads/main" ]; then
              echo "main branch"
-           else
+           else 
              echo "release branch"
            fi
